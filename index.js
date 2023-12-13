@@ -103,7 +103,6 @@ function checkInSync() {
 
     if (!Object.keys(transfersInProgress.outgoing).length && !Object.keys(transfersInProgress.incoming).length) {
         client.sendMessage('getFiles', NODE_LIST[Object.keys(NODE_LIST)[syncNodeIndex]].listeningPort, NODE_LIST[Object.keys(NODE_LIST)[syncNodeIndex]].address);
-        console.log(`client.sendMessage('getFiles', ${NODE_LIST[Object.keys(NODE_LIST)[syncNodeIndex]].listeningPort}, ${NODE_LIST[Object.keys(NODE_LIST)[syncNodeIndex]].address});`)
         console.log('no transfers in progress');
         syncNodeIndex++;
     }
