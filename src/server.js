@@ -182,6 +182,10 @@ const networkCommands = {
 
         response = JSON.stringify(response);
         
+        console.log(NODE_LIST);
+        console.log(address);
+        console.log(port)
+
         client.sendMessage(`fileList ${response}`, NODE_LIST[`${address}:${port}`].listeningPort, address);
     },
     printThis: function(data) {
@@ -227,9 +231,9 @@ function handleMessage(msg, rinfo) {
     
     let command = msg.substring(0, msg.indexOf(' '));
 
-    if (msg != 'ping' && msg.split(' ')[0] != 'fileChunk' && command != 'fileList' && msg != 'getFiles') {
+    // if (msg != 'ping' && msg.split(' ')[0] != 'fileChunk' && command != 'fileList' && msg != 'getFiles') {
         console.log(`[MESSAGE RECEIVED]: ${msg} from ${rinfo.address}:${rinfo.port}`);
-    }
+    // }
 
     if (command == 'printThis') {
         networkCommands[command](msg.substring(msg.indexOf(' ') + 1), rinfo.address, rinfo.port);
