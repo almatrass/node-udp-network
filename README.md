@@ -11,6 +11,9 @@ This was made as a project for my Distributed Computing module in my Computer Sc
 
 ## CLI commands
 `nodelist` - provides a list of all nodes
+
 `myFiles` - shows all files currently owned (should be the same across all nodes)
+
 `sendAllNodes *message*` - sends any message to all nodes on the network
+
 `sendSpecificNode *message* *node unique name*` - sends a message to a specific node, with the provided unique name
