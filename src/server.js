@@ -232,9 +232,9 @@ function handleMessage(msg, rinfo) {
     
     let command = msg.substring(0, msg.indexOf(' '));
 
-    // if (msg != 'ping' && msg.split(' ')[0] != 'fileChunk' && command != 'fileList' && msg != 'getFiles') {
+    if (msg != 'ping' && msg.split(' ')[0] != 'fileChunk' && command != 'fileList' && msg != 'getFiles') {
         console.log(`[MESSAGE RECEIVED]: ${msg} from ${rinfo.address}:${rinfo.port}`);
-    // }
+    }
 
     if (command == 'printThis') {
         networkCommands[command](msg.substring(msg.indexOf(' ') + 1), rinfo.address, rinfo.port);
