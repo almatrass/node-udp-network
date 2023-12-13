@@ -182,10 +182,6 @@ const networkCommands = {
         });
 
         response = JSON.stringify(response);
-        
-        console.log(NODE_LIST);
-        console.log(address);
-        console.log(port)
 
         client.sendMessage(`fileList ${response}`, NODE_LIST[`${address}:${port}`].listeningPort, address);
     },
