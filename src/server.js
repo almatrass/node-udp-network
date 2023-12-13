@@ -29,6 +29,7 @@ const networkCommands = {
 
         NODE_LIST[`${address}:${port}`] = {
             name,
+            address,
             listeningPort,
             lastPing: Date.now()
         };
@@ -47,6 +48,7 @@ const networkCommands = {
     newNodeMe: function(name, listeningPort, address, port) {
         NODE_LIST[`${address}:${port}`] = {
             name,
+            address,
             listeningPort,
             lastPing: Date.now()
         };
