@@ -160,6 +160,7 @@ const networkCommands = {
         client.sendMessage(`printThis ${fileList}`, NODE_LIST[`${address}:${port}`].listeningPort, address);
     },
     getFiles: function(address, port) {
+        if (!NODE_LIST[`${address}:${port}`]) return;
         let response = {
             fileArr: []
         };
